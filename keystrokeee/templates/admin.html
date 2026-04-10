@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #111827;
+            color: white;
+            padding: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #1f2937;
+        }
+
+        th, td {
+            border: 1px solid white;
+            padding: 10px;
+        }
+
+        th {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+
+    <h1> Admin Dashboard</h1>
+
+    <h2>Registered Users</h2>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Typing Pattern</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>🕒 Login Attempt Logs</h2>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Timestamp</th>
+            <th>Status</th>
+            <th>Risk</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log[0] }}</td>
+            <td>{{ log[1] }}</td>
+            <td>{{ log[2] }}</td>
+            <td>{{ log[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
